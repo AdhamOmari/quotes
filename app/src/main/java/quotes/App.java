@@ -24,14 +24,15 @@ public class App {
         List<Quote> booksList= new Gson().fromJson(reader,collectionsType);
         System.out.println(collectionsType);
 
+        
         Random random=new Random();
-        int ranNum= random.nextInt((booksList.size()-1)+1);
+        int faker=random.nextInt((booksList.size()-1)+1);
 
-        System.out.println(ranNum);
-        System.out.println(booksList.get(ranNum).toString());
+        System.out.println(faker);
+        System.out.println(booksList.get(faker).toString());
 
-        System.out.println(booksList.get(ranNum).toString());
-        System.out.println(booksList.get(ranNum).toString());
+        System.out.println(booksList.get(faker).toString());
+        System.out.println(booksList.get(faker).toString());
         System.out.println(collectionsType);
 
     }
