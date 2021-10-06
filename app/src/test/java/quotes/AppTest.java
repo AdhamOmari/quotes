@@ -7,10 +7,11 @@ import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import org.junit.jupiter.api.Test;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.Reader;
+import java.io.*;
 import java.lang.reflect.Type;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -33,4 +34,12 @@ class AppTest {
         assertEquals(str,booksList.get(ranNum).toString());
 
     }
+
+
+
+        @Test void testApiReader() {
+            String apiUrl = "http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en";
+            String testQuote =  App.apiQuotes(apiUrl);
+            assertTrue(testQuote != null);
+        }
 }
